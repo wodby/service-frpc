@@ -1,0 +1,29 @@
+name: frpc
+icon: frpc
+type: infrastructure
+title: FRPC
+hostname: frpc
+containers:
+  - name: frpc
+
+helm:
+  name: wodby
+  source: oci://registry-1.docker.io/wodby/frpc
+  chart: oci://registry-1.docker.io/wodby/frpc
+  version: 0.1.0
+  configurations:
+    - name: frpc
+      labels: labels
+      annotations: podAnnotations
+      env: envVars
+  values:
+    - name: frpc.clientId
+      value: '{{kubernetes.proxyClientID}}'
+    - name: frpc.serverAddr
+      value: '{{wodby_frpc_server_addr}}'
+    - name: frpc.serverPort
+      value: '{{wodby_frpc_server_port}}'
+    - name: frpc.oidcTokenEndpointURL
+      value: '{{wodby_frpc_oidc_token_endpoint_url}}'      
+    - name: frpc.secretKey
+      value: '{{kubernetes.proxySecretKey}}'
