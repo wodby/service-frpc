@@ -27,3 +27,5 @@ helm:
       value: '{{wodby_frpc_oidc_token_endpoint_url}}'      
     - name: frpc.secretKey
       value: '{{kubernetes.proxySecretKey}}'
+    - name: frpc.domain
+      value: '{{kubernetes.domain}}'
