@@ -20,7 +20,7 @@ helm:
     - name: frpc.authMethod
       value: 'oidc'  
     - name: frpc.clientId
-      value: '{{kubernetes.proxyClientID}}'
+      value: '{{kubernetes.frpc.oidcClientID}}'
     - name: frpc.serverAddr
       value: '{{kubernetes.frpc.serverAddr}}'
     - name: frpc.serverPort
