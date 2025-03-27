@@ -34,4 +34,4 @@ helm:
     - name: frpc.subdomain
       value: '{{kubernetes.frpc_subdomain}}'
     - name: frpc.customDomain
-      value: '{{kubernetes.customDomain}}'
+      value: '{{kubernetes.frpc_custom_domain}}'
