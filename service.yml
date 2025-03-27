@@ -17,10 +17,6 @@ helm:
       annotations: podAnnotations
       env: envVars
   values:
-    - name: frpc.authMethod
-      value: 'oidc'  
-    - name: frpc.clientId
-      value: '{{kubernetes.frpc.oidcClientID}}'
     - name: frpc.serverAddr
       value: '{{kubernetes.frpc.serverAddr}}'
     - name: frpc.serverPort
@@ -28,9 +24,13 @@ helm:
     - name: frpc.httpUser
       value: '{{kubernetes.frpc.httpUser}}'
     - name: frpc.httpPassword
-      value: '{{kubernetes.frpc.httpPassword}}'      
+      value: '{{kubernetes.frpc.httpPassword}}'
     - name: frpc.oidcTokenEndpointURL
-      value: '{{kubernetes.frpc.oidcTokenEndpointURL}}'      
+      value: '{{kubernetes.frpc.oidcTokenEndpointURL}}'
+    - name: frpc.authMethod
+      value: 'oidc'
+    - name: frpc.clientId
+      value: '{{kubernetes.frpc.oidcClientID}}'      
     - name: frpc.oidcClientSecret
       value: '{{kubernetes.frpc.oidcClientSecret}}'
     - name: frpc.customDomain
