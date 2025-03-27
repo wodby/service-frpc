@@ -33,3 +33,5 @@ helm:
       value: '{{kubernetes.proxySecretKey}}'
     - name: frpc.subdomain
       value: '{{kubernetes.frpc_subdomain}}'
+    - name: frpc.customDomain
+      value: '{{kubernetes.customDomain}}'
