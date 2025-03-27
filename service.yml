@@ -24,9 +24,9 @@ helm:
     - name: frpc.serverPort
       value: '{{wodby_frpc_server_port}}'
     - name: frpc.httpUser
-      value: '{{kubernetes.frpc_user}}'
+      value: '{{kubernetes.frpc_http_user}}'
     - name: frpc.httpPassword
-      value: '{{kubernetes.frpc_password}}'      
+      value: '{{kubernetes.frpc_http_password}}'      
     - name: frpc.oidcTokenEndpointURL
       value: '{{wodby_frpc_oidc_token_endpoint_url}}'      
     - name: frpc.secretKey
