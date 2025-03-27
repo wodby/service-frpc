@@ -35,3 +35,5 @@ helm:
       value: '{{kubernetes.frpc_custom_domain}}'
     - name: frpc.apiPrefix
       value: '{{kubernetes.apiPrefix}}'
+    - name: frpc.location
+      value: '{{kubernetes.frpc_location}}'
