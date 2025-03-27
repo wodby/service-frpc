@@ -37,3 +37,5 @@ helm:
       value: '/{{kubernetes.fullName}}/'
     - name: frpc.location
       value: '/{{kubernetes.fullName}}'
+    - name: frpc.authMethod
+      value: 'oidc'
