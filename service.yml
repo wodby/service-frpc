@@ -17,6 +17,8 @@ helm:
       annotations: podAnnotations
       env: envVars
   values:
+    - name: frpc.name
+      value: '{{kubernetes.fullName}}'  
     - name: frpc.serverAddr
       value: '{{kubernetes.frpc.serverAddr}}'
     - name: frpc.serverPort
@@ -36,6 +38,6 @@ helm:
     - name: frpc.customDomain
       value: '{{kubernetes.frpc.customDomain}}'
     - name: frpc.apiPrefix
-      value: '/{{kubernetes.frpc.location}}/'
+      value: '/{{kubernetes.fullName}}/'
     - name: frpc.location
-      value: '/{{kubernetes.frpc.location}}'
+      value: '/{{kubernetes.fullName}}'
