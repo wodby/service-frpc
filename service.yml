@@ -41,9 +41,3 @@ helm:
       value: '/{{kubernetes.fullName}}/'
     - name: frpc.location
       value: '/{{kubernetes.fullName}}'
-
-configs:
-- name: frpc
-  title: FRPC config
-  filepath: /etc/gotpl/frpc.toml.tmpl
-  config: frpc.toml.tmpl
