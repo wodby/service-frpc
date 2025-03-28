@@ -29,8 +29,6 @@ helm:
       value: '{{kubernetes.frpc.httpPassword}}'
     - name: frpc.oidcTokenEndpointURL
       value: '{{kubernetes.frpc.oidcTokenEndpointURL}}'
-    - name: frpc.authMethod
-      value: 'oidc'
     - name: frpc.oidcClientID
       value: '{{kubernetes.frpc.oidcClientID}}'      
     - name: frpc.oidcClientSecret
