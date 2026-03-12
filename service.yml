@@ -12,7 +12,7 @@ helm:
   chart: oci://registry-1.docker.io/wodby/frpc
   version: 0.1.0
   configurations:
-    - name: frpc
+    - container: frpc
       labels: labels
       annotations: podAnnotations
       env: envVars
