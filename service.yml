@@ -16,6 +16,8 @@ helm:
       labels: labels
       annotations: podAnnotations
       env: envVars
+      volumes: extraVolumes
+      mounts: extraVolumeMounts
   values:
     - name: frpc.name
       value: '{{kubernetes.fullName}}'  
