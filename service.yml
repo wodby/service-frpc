@@ -8,8 +8,8 @@ containers:
 
 helm:
   name: wodby
-  source: oci://registry-1.docker.io/wodby/frp
-  chart: oci://registry-1.docker.io/wodby/frp
+  source: oci://registry-1.docker.io/wodby/frpc
+  chart: oci://registry-1.docker.io/wodby/frpc
   version: 0.1.0
   configurations:
     - container: frpc
