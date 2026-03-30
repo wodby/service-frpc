@@ -2,7 +2,6 @@ name: frpc
 icon: frpc
 type: infrastructure
 title: FRPC
-hostname: frpc
 containers:
   - name: frpc
 
