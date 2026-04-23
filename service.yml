@@ -30,17 +30,17 @@ helm:
     value: '/{{kubernetes.fullName}}/'
   - name: frpc.location
     value: '/{{kubernetes.fullName}}'
+
 workloads:
 - id: main
   kind: deployment
   primary: true
-  containers:
-  - name: frpc
-
-    helm:
-      env: envVars
-      mounts: extraVolumeMounts
   helm:
     labels: labels
     annotations: podAnnotations
     volumes: extraVolumes
+  containers:
+  - name: frpc
+    helm:
+      env: envVars
+      mounts: extraVolumeMounts
