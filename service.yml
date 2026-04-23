@@ -2,41 +2,45 @@ name: frpc
 icon: frpc
 type: infrastructure
 title: FRPC
-containers:
-  - name: frpc
-
 helm:
   name: wodby
   source: oci://registry-1.docker.io/wodby/frpc
   chart: oci://registry-1.docker.io/wodby/frpc
   version: 0.1.0
-  configurations:
-    - container: frpc
-      labels: labels
-      annotations: podAnnotations
-      env: envVars
-      volumes: extraVolumes
-      mounts: extraVolumeMounts
   values:
-    - name: frpc.name
-      value: '{{kubernetes.fullName}}'  
-    - name: frpc.serverAddr
-      value: '{{kubernetes.frpc.serverAddr}}'
-    - name: frpc.serverPort
-      value: '{{kubernetes.frpc.serverPort}}'
-    - name: frpc.httpUser
-      value: '{{kubernetes.frpc.httpUser}}'
-    - name: frpc.httpPassword
-      value: '{{kubernetes.frpc.httpPassword}}'
-    - name: frpc.oidcTokenEndpointURL
-      value: '{{kubernetes.frpc.oidcTokenEndpointURL}}'
-    - name: frpc.oidcClientID
-      value: '{{kubernetes.frpc.oidcClientID}}'      
-    - name: frpc.oidcClientSecret
-      value: '{{kubernetes.frpc.oidcClientSecret}}'
-    - name: frpc.customDomain
-      value: '{{kubernetes.frpc.customDomain}}'
-    - name: frpc.apiPrefix
-      value: '/{{kubernetes.fullName}}/'
-    - name: frpc.location
-      value: '/{{kubernetes.fullName}}'
+  - name: frpc.name
+    value: '{{kubernetes.fullName}}'
+  - name: frpc.serverAddr
+    value: '{{kubernetes.frpc.serverAddr}}'
+  - name: frpc.serverPort
+    value: '{{kubernetes.frpc.serverPort}}'
+  - name: frpc.httpUser
+    value: '{{kubernetes.frpc.httpUser}}'
+  - name: frpc.httpPassword
+    value: '{{kubernetes.frpc.httpPassword}}'
+  - name: frpc.oidcTokenEndpointURL
+    value: '{{kubernetes.frpc.oidcTokenEndpointURL}}'
+  - name: frpc.oidcClientID
+    value: '{{kubernetes.frpc.oidcClientID}}'
+  - name: frpc.oidcClientSecret
+    value: '{{kubernetes.frpc.oidcClientSecret}}'
+  - name: frpc.customDomain
+    value: '{{kubernetes.frpc.customDomain}}'
+  - name: frpc.apiPrefix
+    value: '/{{kubernetes.fullName}}/'
+  - name: frpc.location
+    value: '/{{kubernetes.fullName}}'
+workloads:
+- id: main
+  kind: deployment
+  primary: true
+  containers:
+  - name: frpc
+
+    helm:
+      env: envVars
+      mounts: extraVolumeMounts
+  helm:
+    labels: labels
+    annotations: podAnnotations
+    volumes: extraVolumes
