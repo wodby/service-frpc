@@ -36,7 +36,7 @@ workloads:
   kind: deployment
   primary: true
   helm:
-    labels: labels
+    labels: podLabels
     annotations: podAnnotations
     volumes: extraVolumes
   containers:
