@@ -1,1 +1,1 @@
-# service-frpc
+# FRPC service
