@@ -6,7 +6,7 @@ helm:
   name: wodby
   source: oci://registry-1.docker.io/wodby/frpc
   chart: oci://registry-1.docker.io/wodby/frpc
-  version: 0.1.1
+  version: 0.2.0
   values:
   - name: frpc.name
     value: '{{kubernetes.fullName}}'
@@ -30,6 +30,8 @@ helm:
     value: '/{{kubernetes.fullName}}/'
   - name: frpc.location
     value: '/{{kubernetes.fullName}}'
+  - name: frpc.egressProxyExistingSecret
+    value: '{{kubernetes.frpc.egressProxyExistingSecret}}'
 
 workloads:
 - name: main
