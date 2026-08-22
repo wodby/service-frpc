@@ -2,6 +2,12 @@ name: frpc
 icon: frpc
 type: infrastructure
 title: FRPC
+deployment:
+  strategy: recreate
+  minReady: 10s
+  progressDeadline: 15m
+  shutdownGracePeriod: 30s
+
 helm:
   name: wodby
   source: oci://registry-1.docker.io/wodby/frpc
