@@ -12,7 +12,7 @@ helm:
   name: wodby
   source: oci://registry-1.docker.io/wodby/frpc
   chart: oci://registry-1.docker.io/wodby/frpc
-  version: 0.3.0
+  version: 0.3.1
   values:
   - name: frpc.name
     value: '{{kubernetes.fullName}}'
