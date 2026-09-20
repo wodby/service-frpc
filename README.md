@@ -22,7 +22,7 @@ configuration for FRPC.
 | Type | Infrastructure service |
 | Workloads | `main` (Deployment), primary |
 | Containers | `frpc` |
-| Helm | chart `oci://registry-1.docker.io/wodby/frpc`; version `0.2.0` |
+| Helm | chart `oci://registry-1.docker.io/wodby/frpc`; version `0.3.2` |
 
 ## Role in Wodby infrastructure
 
