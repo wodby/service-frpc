@@ -12,7 +12,7 @@ helm:
   name: wodby
   source: oci://registry-1.docker.io/wodby/frpc
   chart: oci://registry-1.docker.io/wodby/frpc
-  version: 0.3.2
+  version: 0.4.0
   values:
   - name: frpc.name
     value: '{{kubernetes.fullName}}'
@@ -36,6 +36,12 @@ helm:
     value: '/{{kubernetes.fullName}}/'
   - name: frpc.location
     value: '/{{kubernetes.fullName}}'
+  - name: frpc.shellLocation
+    value: '/.shell/{{kubernetes.fullName}}/'
+  - name: frpc.shellHttpUser
+    value: '{{kubernetes.frpc.shellHttpUser}}'
+  - name: frpc.shellHttpPassword
+    value: '{{kubernetes.frpc.shellHttpPassword}}'
   - name: frpc.egressProxyExistingSecret
     value: '{{kubernetes.frpc.egressProxyExistingSecret}}'
 
